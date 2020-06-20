@@ -25,7 +25,7 @@ function writePassword() {
 
 // WHEN I answer each prompt
 // THEN my input should be validated and at least one character type should be selected
-// Each prompt and it needs to be validated...
+// each prompt needs to be validated...
 
 //*********************4 confirms****************
 // WHEN prompted for character types to include in the password
@@ -40,7 +40,7 @@ function writePassword() {
 // WHEN all prompts are answered
 // THEN a password is generated that matches the selected criteria
 // All the information is gathered (all prompts finished getting input)
-// All the hard logic goes here ???????
+// All the HARD logic goes here ???????
 
 
 // WHEN the password is generated
@@ -56,7 +56,7 @@ generateBtn.addEventListener("click", writePassword);
 
 // Ask user if they want numbers in thier password.
 // Store user answer to if they want number in their password.
-var passwordNumber = confirm("Do you want number in youre password?")
+var passwordNumber = confirm("Do you want number in your password?")
 
 
 // Ask user if they want special charcters in their password.
