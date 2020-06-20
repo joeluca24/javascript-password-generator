@@ -26,6 +26,11 @@ function writePassword() {
     var specChar = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"];
     var password = "";
     var passwordLength = false;
+
+    while (passwordLength < 8 || passwordLength > 128 || passwordLength == "") { // passwordValid is false
+      passwordLength = prompt("Please choose a valid length: Choose a length between 8 and 128")
+
+
       //*********************4 confirms****************
   // WHEN prompted for character types to include in the password
   // THEN I choose lowercase, uppercase, numeric, and/or special characters
@@ -51,6 +56,33 @@ function writePassword() {
   var useUpperCase = confirm("Do you want to include uppercase letters your password?");
   var useNumbers = confirm("Do you want to include numbers in your password?");
   var passwordCharacter = confirm("Do you want to include special characters in your password?");
+
+  / if lowercase = true 
+  if (useLowerCase === true) {
+    // than we can add into the empty array 
+    // const array3 = array1.concat(array2);    <-- explanation of what concatenating does
+    possible = possible.concat(lowerCase);
+    
+  }
+  if (useUpperCase === true) {
+    // add to array 
+    possible = possible.concat(upperCase);
+   
+  }
+  if (useNumbers === true) {
+    // add to array 
+    possible = possible.concat(numbers);
+    // console.log(possible);
+  }
+  if (useSpecChar === true) {
+    // add to array  
+    possible = possible.concat(specChar);
+    console.log(possible);
+  }
+​
+// console.log(passwordLength)
+// console.log(passwordNumber)
+// console.log(passworCharacter)
 
     
   // Store users answer to how long the password is going to be.
@@ -80,6 +112,17 @@ function writePassword() {
   // We need a prompt here and ask for the length from the user
   // Check if the number is < 8 and > 128
 
+  
+  for (var i = 0; i < passwordLength; i++) {
+    var randomChar = possible[Math.floor(Math.random() * possible.length)];
+    password = password + randomChar
+    console.log(password);
+  }
+  return password; // return passworfd when input in completeed succesfully. 
+​
+​
+}
+
   // WHEN I answer each prompt
   // THEN my input should be validated and at least one character type should be selected
   // each prompt needs to be validated...
@@ -100,7 +143,3 @@ function writePassword() {
 
  
 
-
-// console.log(passwordLength)
-// console.log(passwordNumber)
-// console.log(passworCharacter)
