@@ -44,7 +44,7 @@ function writePassword() {
 
  // Ask user if they want special charcters in their password.
  // Store user answer if they special characters in their password.
-   var passwordCharacter = confirm("Do you want special characters in your password?")
+   var passwordCharacter = confirm("Do you want special characters in your` password?")
 
 
   var useLowerCase = confirm("Do you want to include lowercase letters in your password?");
