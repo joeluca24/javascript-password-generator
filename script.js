@@ -25,9 +25,14 @@ function writePassword() {
     var passwordNumber = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
     var specChar = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"];
     var password = "";
-    var passwordLength = false;
+    var passwordLength = false;  
 
-    while (passwordLength < 8 || passwordLength > 128 || passwordLength == "") { // passwordValid is false
+// WHEN prompted for the length of the password
+  // THEN I choose a length of at least 8 characters and no more than 128 characters
+  // We need a prompt here and ask for the length from the user
+  // Check if the number is < 8 and > 128   
+  
+    while (passwordLength < 8 || passwordLength > 128 || passwordLength == "") { 
       passwordLength = prompt("Please choose a valid length: Choose a length between 8 and 128")
 
 
@@ -52,29 +57,28 @@ function writePassword() {
    var passwordCharacter = confirm("Do you want special characters in your` password?")
 
 
-  var useLowerCase = confirm("Do you want to include lowercase letters in your password?");
-  var useUpperCase = confirm("Do you want to include uppercase letters your password?");
-  var useNumbers = confirm("Do you want to include numbers in your password?");
+  var otherLowerCase = confirm("Do you want to include lowercase letters in your password?");
+  var otherUpperCase = confirm("Do you want to include uppercase letters your password?");
+  var otherNumbers = confirm("Do you want to include numbers in your password?");
   var passwordCharacter = confirm("Do you want to include special characters in your password?");
 
   / if lowercase = true 
-  if (useLowerCase === true) {
+  if (otherLowerCase === true) {
     // than we can add into the empty array 
-    // const array3 = array1.concat(array2);    <-- explanation of what concatenating does
     possible = possible.concat(lowerCase);
     
   }
-  if (useUpperCase === true) {
+  if (otherUpperCase === true) {
     // add to array 
     possible = possible.concat(upperCase);
    
   }
-  if (useNumbers === true) {
+  if (otherNumbers === true) {
     // add to array 
     possible = possible.concat(numbers);
-    // console.log(possible);
+   
   }
-  if (useSpecChar === true) {
+  if (passwordCharacter === true) {
     // add to array  
     possible = possible.concat(specChar);
     console.log(possible);
@@ -112,7 +116,7 @@ function writePassword() {
   // We need a prompt here and ask for the length from the user
   // Check if the number is < 8 and > 128
 
-  
+
   for (var i = 0; i < passwordLength; i++) {
     var randomChar = possible[Math.floor(Math.random() * possible.length)];
     password = password + randomChar
